@@ -1,0 +1,142 @@
+ext.deps = [:]
+
+def versions = [:]
+versions.android_gradle_plugin = "3.5.3"
+versions.support = "28.0.0"
+versions.multidex = "1.0.3"
+
+versions.gson = "2.8.5" //---https://github.com/google/gson
+
+versions.rxjava2 = "2.2.12"
+versions.rx_android = "2.1.1"  //---https://github.com/ReactiveX/RxAndroid
+
+versions.glide = "4.9.0"//---https://github.com/bumptech/glide
+
+versions.retrofit = "2.6.1"  //---https://github.com/square/retrofit
+versions.persistent_cookie = "v1.0.1"   //---- https://github.com/franmontiel/PersistentCookieJar
+versions.logger = "2.2.0" //---https://github.com/orhanobut/logger
+//Arouter
+versions.arouter_compiler = "1.2.2" //---https://github.com/alibaba/ARouter
+versions.arouter_api = "1.5.0"
+//butterknife
+//使用MVVM框架
+//versions.butterknife="9.0.0"  //---https://github.com/JakeWharton/butterknife
+//dbflow
+versions.dbflow="4.2.4"//---https://github.com/agrosner/DBFlow
+//eventbus
+versions.eventbus="3.1.1"  //---https://github.com/greenrobot/EventBus
+//circleimageview
+versions.circleimageview="3.0.1"//---https://github.com/hdodenhof/CircleImageView
+//FlycoTabLayout 导航栏
+versions.flycoTabLayout="2.1.2" //---https://github.com/H07000223/FlycoTabLayout
+//BaseRecyclerViewAdapterHelper
+versions.base_recycler_adapter="2.9.50"//---https://github.com/CymChad/BaseRecyclerViewAdapterHelper
+//SmartRefreshLayout  刷新库
+versions.smartRefreshLayout="2.0.1"//---https://github.com/scwang90/SmartRefreshLayout
+//ImagePicker 图片选择器
+versions.imagePicker="v2.2.4"//---https://github.com/LuckSiege/PictureSelector
+//titlebar  通用标题栏支持沉浸式
+versions.titlebar="1.1.4" //---https://github.com/wuhenzhizao/android-titlebar
+//底部弹出框
+versions.bottomDialog="1.1.9"//---https://github.com/shaohui10086/BottomDialog
+//wheelpicker
+versions.wheelPicker="1.1.3"//---https://github.com/AigeStudio/WheelPicker
+//轮播广告
+versions.banner="1.4.10" //https://github.com/youth5201314/banner
+//自定义验证码样式
+versions.verificationCode="1.7"//https://github.com/liuguangli/VerificationCodeInput
+//树形列表
+versions.recyclerTreeView="1.2.0"//https://github.com/TellH/RecyclerTreeView
+//扫码集成zxing
+versions.qrcodeZxing="1.3.7"//https://github.com/bingoogolapple/BGAQRCode-Android
+def deps = [:]
+deps.android_gradle_plugin = "com.android.tools.build:gradle:$versions.android_gradle_plugin"
+
+def support = [:]
+support.annotations = "com.android.support:support-annotations:$versions.support"
+support.app_compat = "com.android.support:appcompat-v7:$versions.support"
+support.recyclerview = "com.android.support:recyclerview-v7:$versions.support"
+support.design = "com.android.support:design:$versions.support"
+support.v4 = "com.android.support:support-v4:$versions.support"
+support.multidex = "com.android.support:multidex:$versions.multidex"
+support.customtabs = "com.android.support:customtabs:$versions.support"
+deps.support = support
+
+def retrofit = [:]
+retrofit.runtime = "com.squareup.retrofit2:retrofit:$versions.retrofit"
+retrofit.adapter = "com.squareup.retrofit2:adapter-rxjava2:$versions.retrofi"
+retrofit.gson = "com.squareup.retrofit2:converter-gson:$versions.retrofit"
+deps.retrofit = retrofit
+
+def butterknife=[:]
+butterknife.plugin="com.jakewharton:butterknife-gradle-plugin:$versions.butterknife"
+butterknife.api="com.jakewharton:butterknife:$versions.butterknife"
+butterknife.compiler="com.jakewharton:butterknife-compiler:$versions.butterknife"
+deps.butterknife=butterknife
+
+def dbflow=[:]
+dbflow.processor="com.github.Raizlabs.DBFlow:dbflow-processor:$versions.dbflow"
+dbflow.core="com.github.Raizlabs.DBFlow:dbflow-core:$versions.dbflow"
+dbflow.api="com.github.Raizlabs.DBFlow:dbflow:$versions.dbflow"
+deps.dbflow=dbflow
+
+deps.glide = "com.github.bumptech.glide:glide:$versions.glide"//图片缓存
+deps.glide_compiler = "com.github.bumptech.glide:compiler:$versions.glide"
+
+deps.persistent_cookie = "com.github.franmontiel:PersistentCookieJar:$versions.persistent_cookie"//网络
+deps.rxjava2 = "io.reactivex.rxjava2:rxjava:$versions.rxjava2"
+deps.rx_android = "io.reactivex.rxjava2:rxandroid:$versions.rx_android"
+deps.gson = "com.google.code.gson:gson:$versions.gson"
+deps.logger = "com.orhanobut:logger:$versions.logger"
+
+deps.eventbus = "org.greenrobot:eventbus:$versions.eventbus"
+
+deps.arouter_api = "com.alibaba:arouter-api:$versions.arouter_api"//阿里组件化路由
+deps.arouter_compiler = "com.alibaba:arouter-compiler:$versions.arouter_compiler"//阿里组件化路由
+
+deps.circleimageview = "de.hdodenhof:circleimageview:$versions.circleimageview"
+
+deps.flycoTabLayout="com.flyco.tablayout:FlycoTabLayout_Lib:$versions.flycoTabLayout@aar"
+
+deps.base_recycler_adapter="com.github.CymChad:BaseRecyclerViewAdapterHelper:$versions.base_recycler_adapter"
+
+def smartRefresh=[:]
+smartRefresh.kernel="com.scwang.smart:refresh-layout-kernel:$versions.smartRefreshLayout"//核心必须依赖
+smartRefresh.header="com.scwang.smart:refresh-header-material:$versions.smartRefreshLayout"//刷新头
+smartRefresh.footer="com.scwang.smart:refresh-footer-classics:$versions.smartRefreshLayout"//加载
+deps.smartRefresh=smartRefresh
+
+deps.imagePicker="com.github.LuckSiege.PictureSelector:picture_library:$versions.imagePicker"
+
+deps.titlebar="com.wuhenzhizao:titlebar:$versions.titlebar"
+
+deps.bottomDialog="me.shaohui:bottomdialog:$versions.bottomDialog"
+
+deps.wheelPicker="cn.aigestudio.wheelpicker:WheelPicker:$versions.wheelPicker"
+
+deps.banner="com.youth.banner:banner:$versions.banner"
+
+deps.verificationCode="com.github.liuguangli:VerificationCodeInput:$versions.verificationCode"
+
+deps.recyclerTreeView="com.github.TellH:RecyclerTreeView:$versions.recyclerTreeView"
+
+deps.qrcodeZxing="cn.bingoogolapple:bga-qrcode-zxing:$versions.qrcodeZxing"
+ext.deps = deps
+
+
+def build_versions = [:]
+build_versions.min_sdk = 19
+build_versions.target_sdk = 28
+build_versions.build_tools = "28.0.0"
+ext.build_versions = build_versions
+
+def addRepos(RepositoryHandler handler) {
+    handler.google()
+    handler.jcenter()
+    handler.mavenCentral()
+    handler.maven{url "https://jitpack.io" }
+    handler.maven{ url 'http://maven.aliyun.com/nexus/content/repositories/releases/'}
+    handler.maven{ url 'http://maven.aliyun.com/nexus/content/repositories/snapshots'}
+}
+
+ext.addRepos = this.&addRepos
